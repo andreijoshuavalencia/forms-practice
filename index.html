@@ -19,11 +19,18 @@
         $(document).ready(function(){
             $('form').submit(function(){
                 if(($("#firstname").val() === "")){
-                    alert("First name can't be blank");
+                    alert("First name can't be blank!");
+                return false
                 };
 
                 if(($("#lastname").val() === "")){
-                    alert("Last name can't be blank");
+                    alert("Last name can't be blank!");
+                return false
+                };
+
+                if(($("#datepicker").val() === "")){
+                    alert("Date can't be blank!");
+                return false
                 };
                 
                 alert("Success, " + $("#firstname").val() + " " +$("#lastname").val() + "! Your vaccination is reserved on " + $("#datepicker").val() + ".");
@@ -41,12 +48,12 @@
 </head>
 <body>
     <h1>Scheduling Form for Vaccination</h1>
-    <form action="#" method="POST">
+    <form action="" method="POST">
         <label for="">First Name:
             <input type="text" name="firstname" id="firstname">
         </label>
         <label for="">Last Name:
-            <input type="text" name="lastname" id="lastname" required>
+            <input type="text" name="lastname" id="lastname">
         </label>
         <label for="">Preferred Date:
             <input type="text" id="datepicker">
